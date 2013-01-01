@@ -42,7 +42,14 @@ public class RobotCommand
         return u.getHost();
     }
 
-    public void allow(String url, String userAgent) throws IOException, Exception
+    /**
+     * Determine if a url can be accessed based on the host robots.txt rules
+     * @param url the url
+     * @param userAgent the user agent
+     * @return true is allowed, otherwise false if not allowed
+     * @throws Exception
+     */
+    public boolean allow(String url, String userAgent) throws  Exception
     {
         // Get the host from the url
         String host = getHost(url);
@@ -60,7 +67,7 @@ public class RobotCommand
         }});
 
         // determine if url is allowed
-        System.out.println(isAllowed(host, url, userAgent));
+        return isAllowed(host, url, userAgent);
 
     }
 
@@ -222,7 +229,6 @@ public class RobotCommand
         }
 
         cache.put(host, rulesList);
-        System.out.println(cache);
     }
 
     /**
