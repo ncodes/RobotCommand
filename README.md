@@ -4,7 +4,7 @@ How to use:
 ------------
 
 RobotCommand robotCommand = new RobotCommand();
-robotCommand.allow("http://example.com/some/directory", "my-user-agent");
+\nrobotCommand.allow("http://example.com/some/directory", "my-user-agent");
 
-// Get crawl-delay
+// Get crawl-delay\n
 robotCommand.crawlDelay
