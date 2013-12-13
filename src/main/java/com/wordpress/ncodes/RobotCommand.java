@@ -61,10 +61,6 @@ public class RobotCommand
             cache(host, robotTxt);
         }
 
-        HashMap<String, ArrayList<String>> c = cache.get("www.google.com.ng");
-        c.put("bot", new ArrayList<String>(){{
-            add("disallow: /etc");
-        }});
 
         // determine if url is allowed
         return isAllowed(host, url, userAgent);
